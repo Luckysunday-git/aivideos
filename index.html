@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlimited AI Video Creation Class</title>
+
+    <link rel="icon" type="image/jpg" href="img/digital hub.jpg" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #070b14;
+        color: white;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        background: rgba(0, 195, 255, 0.12);
+        filter: blur(120px);
+        top: -120px;
+        left: -120px;
+        z-index: -1;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        width: 450px;
+        height: 450px;
+        background: rgba(123, 45, 255, 0.15);
+        filter: blur(120px);
+        bottom: -120px;
+        right: -120px;
+        z-index: -1;
+      }
+
+      /* Navbar */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav h1 {
+        font-size: 1.4rem;
+        background: linear-gradient(to right, #00d9ff, #9d4dff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .nav-btn {
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(135deg, #00c3ff, #7b2dff);
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: bold;
+        transition: 0.3s ease;
+      }
+
+      .nav-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+        padding: 90px 8%;
+        flex-wrap: wrap;
+      }
+
+      .hero-content {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(0, 217, 255, 0.12);
+        color: #00d9ff;
+        padding: 10px 18px;
+        border-radius: 30px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(0, 217, 255, 0.2);
+      }
+
+      .hero-content h2 {
+        font-size: 3.5rem;
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+
+      .hero-content h2 span {
+        background: linear-gradient(to right, #00d9ff, #9d4dff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-content p {
+        color: #cfcfcf;
+        font-size: 18px;
+        margin-bottom: 30px;
+        max-width: 650px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(135deg, #00c3ff, #7b2dff);
+        padding: 16px 30px;
+        border-radius: 14px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.3s ease;
+        box-shadow: 0 0 25px rgba(0, 195, 255, 0.3);
+      }
+
+      .cta-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .hero-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 520px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Sections */
+      section {
+        padding: 80px 8%;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .section-text {
+        text-align: center;
+        max-width: 750px;
+        margin: auto;
+        color: #bdbdbd;
+        margin-bottom: 50px;
+      }
+
+      /* Features */
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      .feature-box {
+        width: 320px;
+        padding: 30px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(0, 217, 255, 0.4);
+        transition: 0.3s ease;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-8px);
+        border-color: rgba(0, 217, 255, 0.4);
+      }
+
+      .feature-box h3 {
+        color: #00d9ff;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .feature-box p {
+        color: #c7c7c7;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-size: 2.7rem;
+        margin-bottom: 20px;
+      }
+
+      .cta-section p {
+        max-width: 700px;
+        margin: auto;
+        margin-bottom: 35px;
+        color: #c7c7c7;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 60px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      footer p {
+        color: #bdbdbd;
+        margin-top: 15px;
+      }
+
+      /* Responsive */
+      @media (max-width: 850px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding-top: 50px;
+        }
+
+        .hero-content h2 {
+          font-size: 2.4rem;
+        }
+
+        .hero-content p {
+          margin: auto;
+          margin-bottom: 30px;
+        }
+
+        .feature-box {
+          width: 100%;
+        }
+
+        nav {
+          padding: 15px 20px;
+        }
+
+        nav h1 {
+          font-size: 1.6rem;
+        }
+
+        .nav-btn {
+          padding: 10px 18px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <h1>AI Video Creation Class</h1>
+
+      <a href="join-whatsapp.html" class="nav-btn"> Join Now </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="tag">LIMITED AI TRAINING ACCESS</div>
+
+        <h2>
+          Learn How To Create
+          <span>Unlimited AI Videos</span>
+          Without Monthly Subscription
+        </h2>
+
+        <p>
+          Discover powerful AI tools and smart methods creators are using to
+          generate cinematic AI videos, animations, ads, storytelling videos,
+          and viral content without subscribing to other AI tools.
+        </p>
+
+        <a href="join-whatsapp.html" class="cta-btn"> Join The Class Now</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="img/AI2.webp" alt="AI Video Creation Class" />
+      </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section>
+      <h2 class="section-title">What You’ll Learn</h2>
+
+      <p class="section-text">
+        This class is practical and designed for beginners, creators,
+        freelancers, students, and business owners who want to create
+        professional AI videos easily and freely.
+      </p>
+
+      <div class="features">
+        <div class="feature-box">
+          <h3>AI Video Generation</h3>
+          <p>
+            Discover smart methods on how to create your personal AI videos app
+            within 3 minutes (no coding) and use it to generate unlimited videos
+            for free (no more monthly subscription to other AI tools)
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h3>No Monthly Subscription</h3>
+
+          <p>
+            Learn how to create unlimited cinematic AI videos, animations,
+            storytelling videos, ads, and viral content using AI tools.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Free AI Usage</h3>
+
+          <p>Discover how to use other AI tools for free.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Beginner Friendly</h3>
+
+          <p>
+            Everything is broken down step-by-step so even complete beginners
+            can follow and start creating immediately.
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="features">
+      <a href="join-whatsapp.html" class="cta-btn">Join The Class Now </a>
+    </div>
+    <!-- Benefits -->
+    <section>
+      <h2 class="section-title">Class Benefits</h2>
+
+      <p class="section-text">
+        You’ll discover practical AI workflows, prompts, tools, and strategies
+        used by modern AI creators.
+      </p>
+
+      <div class="features">
+        <div class="feature-box">
+          <h3>Step-by-Step Tutorials</h3>
+
+          <p>
+            Follow practical videos showing the complete process from image
+            generation to AI video creation.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Free AI Resources</h3>
+
+          <p>
+            Access prompts, AI tools, websites, materials, and secret resources
+            to speed up your results.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Community Support</h3>
+
+          <p>
+            Connect with other AI creators, ask questions, share progress, and
+            grow together.
+          </p>
+        </div>
+        <div class="feature-box">
+          <h3>Assessment</h3>
+
+          <p>
+            Share daily projects, track growth, team competition, project
+            pitching and award giving.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Start Creating AI Videos Today</h2>
+
+      <p>
+        Join the training and learn the fastest way to create unlimited AI
+        videos like a professional creator.
+      </p>
+
+      <a href="join-whatsapp.html" class="cta-btn"> Join The Class Now </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <h3>AI Video Creation Class</h3>
+
+      <p>Learn • Create • Grow With AI</p>
+    </footer>
+  </body>
+</html>
