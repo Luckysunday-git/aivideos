@@ -241,6 +241,29 @@
         margin-top: 15px;
       }
 
+      /* Fixed Bottom Button (Mobile) */
+      .mobile-fixed-btn {
+        position: fixed;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: center;
+        z-index: 2000;
+      }
+
+      .mobile-fixed-btn a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(135deg, #00c3ff, #7b2dff);
+        padding: 16px;
+        border-radius: 14px;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 0 25px rgba(0, 195, 255, 0.35);
+      }
+
       /* Responsive */
       @media (max-width: 850px) {
         .hero {
@@ -287,6 +310,16 @@
           margin-top: 0px;
           font-size: larger;
           font-size: 2.5rem;
+        }
+      }
+
+      .mobile-fixed-btn {
+        display: none;
+      }
+
+      @media (max-width: 850px) {
+        .mobile-fixed-btn {
+          display: block;
         }
       }
     </style>
@@ -438,5 +471,8 @@
 
       <p>Learn • Create • Grow With AI</p>
     </footer>
+    <div class="mobile-fixed-btn">
+      <a href="join-whatsapp.html">Join The Class Now</a>
+    </div>
   </body>
 </html>
