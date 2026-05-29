@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unlimited AI Video Creation Class</title>
+    <title>AI Video Creation Class</title>
 
     <link rel="icon" type="image/jpg" href="img/digital hub.jpg" />
 
@@ -16,79 +16,65 @@
 
       body {
         font-family: Arial, sans-serif;
-        background: #070b14;
-        color: white;
-        overflow-x: hidden;
+        background: #ffffff;
+        color: #111827;
         line-height: 1.6;
+        overflow-x: hidden;
       }
 
-      body::before {
-        content: "";
-        position: fixed;
-        width: 500px;
-        height: 500px;
-        background: rgba(0, 195, 255, 0.12);
-        filter: blur(120px);
-        top: -120px;
-        left: -120px;
-        z-index: -1;
+      a {
+        text-decoration: none;
       }
 
-      body::after {
-        content: "";
-        position: fixed;
-        width: 450px;
-        height: 450px;
-        background: rgba(123, 45, 255, 0.15);
-        filter: blur(120px);
-        bottom: -120px;
-        right: -120px;
-        z-index: -1;
+      img {
+        max-width: 100%;
+        display: block;
       }
 
-      /* Navbar */
+      /* NAVBAR */
+
       nav {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 8%;
-        /* background: rgba(255, 255, 255, 0.05); */
-        background: #070b14;
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 18px 6%;
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
         position: sticky;
         top: 0;
         z-index: 1000;
       }
 
       nav h1 {
-        font-size: 1;
-        background: linear-gradient(to right, #00d9ff, #9d4dff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #111827;
       }
 
       .nav-btn {
-        text-decoration: none;
+        background: #4338ca;
         color: white;
-        background: linear-gradient(135deg, #00c3ff, #7b2dff);
-        padding: 12px 24px;
+        padding: 12px 18px;
         border-radius: 12px;
-        font-weight: bold;
+        font-size: 14px;
+        font-weight: 700;
         transition: 0.3s ease;
       }
 
       .nav-btn:hover {
-        transform: translateY(-2px);
+        opacity: 0.9;
       }
 
-      /* Hero Section */
+      /* HERO */
+
       .hero {
+        width: 100%;
+        padding: 70px 6%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 60px;
-        padding: 90px 8%;
         flex-wrap: wrap;
       }
 
@@ -99,205 +85,198 @@
 
       .tag {
         display: inline-block;
-        background: rgba(0, 217, 255, 0.12);
-        color: #00d9ff;
         padding: 10px 18px;
-        border-radius: 30px;
-        font-size: 14px;
+        background: #eef2ff;
+        color: #4338ca;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
         margin-bottom: 20px;
-        border: 1px solid rgba(0, 217, 255, 0.2);
       }
 
       .hero-content h2 {
-        font-size: 2rem;
-        line-height: 1.2;
+        font-size: 3.2rem;
+        line-height: 1.15;
         margin-bottom: 20px;
-        width: 320px;
+        max-width: 650px;
+        font-weight: 800;
+        color: #111827;
       }
 
       .hero-content h2 span {
-        background: linear-gradient(to right, #00d9ff, #9d4dff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #4338ca;
       }
 
       .hero-content p {
-        color: #cfcfcf;
-        margin-bottom: 30px;
-        max-width: 650px;
+        font-size: 18px;
+        color: #4b5563;
+        max-width: 620px;
+        margin-bottom: 24px;
+      }
+
+      .proof {
+        margin-bottom: 28px;
+        color: #4338ca;
+        font-weight: 700;
+        font-size: 15px;
       }
 
       .cta-btn {
-        display: inline-block;
-        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #4338ca;
         color: white;
-        background: linear-gradient(135deg, #00c3ff, #7b2dff);
-        padding: 16px 30px;
+        padding: 18px 30px;
         border-radius: 14px;
-        font-size: 30px;
-        font-weight: bold;
+        font-size: 18px;
+        font-weight: 700;
         transition: 0.3s ease;
-        box-shadow: 0 0 25px rgba(0, 195, 255, 0.3);
+        min-width: 260px;
+        text-align: center;
       }
 
       .cta-btn:hover {
-        transform: scale(1.05);
+        transform: translateY(-2px);
+        background: #312e81;
       }
 
       .hero-image {
         flex: 1;
         min-width: 300px;
-        text-align: center;
+        display: flex;
+        justify-content: center;
       }
 
       .hero-image img {
         width: 100%;
         max-width: 520px;
         border-radius: 24px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+        object-fit: cover;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
       }
 
-      /* Sections */
+      /* SECTION */
+
       section {
-        padding: 80px 8%;
+        padding: 70px 6%;
       }
 
       .section-title {
         text-align: center;
         font-size: 2.5rem;
-        margin-bottom: 15px;
+        font-weight: 800;
+        margin-bottom: 14px;
+        color: #111827;
       }
 
       .section-text {
         text-align: center;
-        max-width: 750px;
+        max-width: 760px;
         margin: auto;
-        color: #bdbdbd;
+        color: #6b7280;
         margin-bottom: 50px;
+        font-size: 17px;
       }
 
-      /* Features */
+      /* FEATURES */
+
       .features {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-      }
-
-      .features2 {
-        /* padding: 16px 30px; */
-        border-radius: 14px;
-        font-size: 30px;
-        font-weight: bold;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .features2 a {
-        text-decoration: none;
-        padding: 16px 10px;
-        border-radius: 14px;
-        color: white;
-        background: linear-gradient(135deg, #00c3ff, #7b2dff);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
       }
 
       .feature-box {
-        width: 320px;
+        background: #ffffff;
+        border: 2px solid #e5e7eb;
+        border-radius: 22px;
         padding: 30px;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(0, 217, 255, 0.4);
         transition: 0.3s ease;
+        height: 100%;
       }
 
       .feature-box:hover {
-        transform: translateY(-8px);
-        border-color: rgba(0, 217, 255, 0.4);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
       }
 
       .feature-box h3 {
-        color: #00d9ff;
-        text-align: center;
-        margin-bottom: 15px;
-        font-size: 1.3rem;
+        font-size: 1.25rem;
+        margin-bottom: 14px;
+        color: #111827;
+        font-weight: 700;
       }
 
       .feature-box p {
-        color: #c7c7c7;
+        color: #6b7280;
+        font-size: 16px;
       }
 
-      .cta-btn2 {
-        text-decoration: none;
-        color: white;
-        background: linear-gradient(135deg, #00c3ff, #7b2dff);
-        padding: 16px 30px;
-        border-radius: 14px;
-        font-size: 30px;
-        font-weight: bold;
-        transition: 0.3s ease;
-        box-shadow: 0 0 25px rgba(0, 195, 255, 0.3);
-      }
+      /* CTA SECTION */
 
-      /* CTA Section */
       .cta-section {
         text-align: center;
+        background: #f9fafb;
+        border-top: 1px solid #e5e7eb;
+        border-bottom: 1px solid #e5e7eb;
       }
 
       .cta-section h2 {
-        font-size: 2.7rem;
-        margin-bottom: 20px;
+        font-size: 2.6rem;
+        font-weight: 800;
+        margin-bottom: 18px;
+        color: #111827;
       }
 
       .cta-section p {
         max-width: 700px;
         margin: auto;
-        margin-bottom: 35px;
-        color: #c7c7c7;
+        margin-bottom: 32px;
+        color: #6b7280;
+        font-size: 17px;
       }
 
-      /* Footer */
+      /* FOOTER */
+
       footer {
         text-align: center;
-        padding: 60px 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(255, 255, 255, 0.03);
+        padding: 50px 20px 120px;
+        background: #ffffff;
+      }
+
+      footer h3 {
+        color: #111827;
+        margin-bottom: 10px;
+        font-size: 1.4rem;
       }
 
       footer p {
-        color: #bdbdbd;
-        margin-top: 15px;
-        margin-bottom: 10px;
+        color: #6b7280;
       }
 
-      /* Fixed Bottom Button (Mobile) */
+      /* MOBILE FIXED BUTTON */
+
       .mobile-fixed-btn {
         display: none;
-        position: fixed;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        text-align: center;
-        z-index: 2000;
       }
 
-      .mobile-fixed-btn a {
-        display: block;
-        text-decoration: none;
-        color: white;
-        background: linear-gradient(135deg, #00c3ff, #7b2dff);
-        padding: 16px;
-        border-radius: 14px;
-        font-size: 20px;
-        font-weight: bold;
-        box-shadow: 0 0 25px rgba(0, 195, 255, 0.35);
-      }
+      /* RESPONSIVE */
 
-      /* Responsive */
       @media (max-width: 850px) {
+        nav {
+          padding: 16px 20px;
+        }
+
+        nav h1 {
+          font-size: 1rem;
+        }
+
+        .nav-btn {
+          padding: 10px 14px;
+          font-size: 13px;
+        }
+
         .hero {
           flex-direction: column;
           text-align: center;
@@ -305,86 +284,107 @@
         }
 
         .hero-content h2 {
-          font-size: 2.4rem;
+          font-size: 2.3rem;
+          margin: auto;
+          margin-bottom: 20px;
         }
 
         .hero-content p {
+          font-size: 16px;
           margin: auto;
-          margin-bottom: 30px;
+          margin-bottom: 24px;
         }
 
-        .feature-box {
-          width: 100%;
-          font-size: large;
-        }
-
-        nav {
-          padding: 15px 20px;
-        }
-
-        nav h1 {
-          font-size: 1.4rem;
-        }
-
-        .nav-btn {
-          padding: 10px 18px;
-          font-size: 20px;
+        .proof {
+          margin-bottom: 25px;
         }
 
         .cta-btn {
-          width: 90%;
-          padding: 16px 30px;
-          text-align: center;
-          font-size: larger;
-          font-weight: bold;
+          width: 100%;
+          min-width: 100%;
         }
 
         .section-title {
-          margin-top: 0px;
-          font-size: larger;
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
 
-        footer p {
-          margin-bottom: 35px;
+        .cta-section h2 {
+          font-size: 2rem;
         }
 
         .mobile-fixed-btn {
           display: block;
-          padding: 16px 30px;
+          position: fixed;
+          bottom: 15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          z-index: 2000;
+        }
+
+        .mobile-fixed-btn a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          background: #4338ca;
+          color: white;
+          padding: 16px;
           border-radius: 14px;
-          margin-bottom: -30px;
+          font-size: 17px;
+          font-weight: 700;
+          box-shadow: 0 10px 30px rgba(67, 56, 202, 0.25);
+        }
+
+        footer {
+          padding-bottom: 110px;
         }
       }
     </style>
   </head>
 
   <body>
-    <!-- Navbar -->
+    <!-- NAVBAR -->
+
     <nav>
       <h1>AI Video Creation Class</h1>
 
-      <a href="join-whatsapp.html" class="nav-btn"> Join Now </a>
+      <a
+        href="https://chat.whatsapp.com/LAweQi5W6mJ38aiCGmwThG?s=cl&p=a&mlu=3"
+        target="_blank"
+        class="nav-btn"
+      >
+        Join Now
+      </a>
     </nav>
 
-    <!-- Hero -->
+    <!-- HERO -->
+
     <section class="hero">
       <div class="hero-content">
-        <div class="tag">LIMITED AI TRAINING ACCESS</div>
+        <div class="tag">LIMITED ACCESS AI TRAINING</div>
 
         <h2>
           Learn How To Create
-          <span>Unlimited AI Videos</span>
-          Without Monthly Subscription
+          <span>Unlimited AI Videos and Images</span>
+          Without Monthly subscriptions
         </h2>
 
         <p>
-          Discover powerful AI tools and smart methods creators are using to
-          generate cinematic AI videos, animations, ads, storytelling videos,
-          and viral content without subscribing to other AI tools.
+          Discover how creators are producing cinematic AI videos, storytelling
+          videos, ads, animations, and viral content using powerful AI methods
+          and free AI tools.
         </p>
 
-        <a href="join-whatsapp.html" class="cta-btn"> Join The Class Here</a>
+        <div class="proof">Beginner Friendly • No Coding • Works On Mobile</div>
+
+        <a
+          href="https://chat.whatsapp.com/LAweQi5W6mJ38aiCGmwThG?s=cl&p=a&mlu=3"
+          target="_blank"
+          class="cta-btn"
+        >
+          Join The WhatsApp AI Class
+        </a>
       </div>
 
       <div class="hero-image">
@@ -392,121 +392,84 @@
       </div>
     </section>
 
-    <!-- What You'll Learn -->
+    <!-- WHAT YOU'LL LEARN -->
+
     <section>
       <h2 class="section-title">What You’ll Learn</h2>
 
       <p class="section-text">
-        This class is practical and designed for beginners, creators,
-        freelancers, students, and business owners who want to create
-        professional AI videos easily and freely.
+        This practical AI class is designed for beginners, creators,
+        freelancers, students, and business owners.
       </p>
 
       <div class="features">
         <div class="feature-box">
-          <h3>AI Video Generation</h3>
+          <h3>Unlimited AI Video Creation</h3>
+
           <p>
-            Discover smart methods on how to create your personal AI videos app
-            within 3 minutes (no coding) and use it to generate unlimited videos
-            for free (no more monthly subscription to other AI tools)
+            Learn how to create unlimited AI videos without expensive monthly
+            subscriptions.
           </p>
         </div>
 
         <div class="feature-box">
-          <h3>No Monthly Subscription</h3>
+          <h3>Free AI Tools</h3>
+
+          <p>Discover powerful Free AI tools and methods creators use daily.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Step-By-Step Tutorials</h3>
 
           <p>
-            Learn how to create unlimited cinematic AI videos, animations,
-            storytelling videos, ads, and viral content using AI tools.
+            Everything is broken down simply for beginners to follow easily.
           </p>
         </div>
 
         <div class="feature-box">
-          <h3>Free AI Usage</h3>
+          <h3>Community Access</h3>
 
-          <p>Discover how to use other AI tools for free.</p>
-        </div>
-
-        <div class="feature-box">
-          <h3>Beginner Friendly</h3>
-
-          <p>
-            Everything is broken down step-by-step so even complete beginners
-            can follow and start creating immediately.
-          </p>
-        </div>
-      </div>
-    </section>
-    <div class="features2">
-      <a href="join-whatsapp.html" class="">Join The Class Now </a>
-    </div>
-    <!-- Benefits -->
-    <section>
-      <h2 class="section-title">Class Benefits</h2>
-
-      <p class="section-text">
-        You’ll discover practical AI workflows, prompts, tools, and strategies
-        used by modern AI creators.
-      </p>
-
-      <div class="features">
-        <div class="feature-box">
-          <h3>Step-by-Step Tutorials</h3>
-
-          <p>
-            Follow practical videos showing the complete process from image
-            generation to AI video creation.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <h3>Free AI Resources</h3>
-
-          <p>
-            Access prompts, AI tools, websites, materials, and secret resources
-            to speed up your results.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <h3>Community Support</h3>
-
-          <p>
-            Connect with other AI creators, ask questions, share progress, and
-            grow together.
-          </p>
-        </div>
-        <div class="feature-box">
-          <h3>Assessment</h3>
-
-          <p>
-            Share daily projects, track growth, team competition, project
-            pitching and award giving.
-          </p>
+          <p>Join a growing AI creator community and learn together.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA SECTION -->
+
     <section class="cta-section">
       <h2>Start Creating AI Videos Today</h2>
 
       <p>
-        Join the training and learn the fastest way to create unlimited AI
-        videos like a professional creator.
+        Join the WhatsApp AI class and start learning how to create professional
+        AI videos.
       </p>
 
-      <a href="join-whatsapp.html" class="cta-btn">Join The Class Here </a>
+      <a
+        href="https://chat.whatsapp.com/LAweQi5W6mJ38aiCGmwThG?s=cl&p=a&mlu=3"
+        target="_blank"
+        class="cta-btn"
+      >
+        Join WhatsApp Class Now
+      </a>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
+
     <footer>
       <h3>AI Video Creation Class</h3>
 
       <p>Learn • Create • Grow With AI</p>
     </footer>
+
+    <!-- MOBILE BUTTON -->
+
     <div class="mobile-fixed-btn">
-      <a href="join-whatsapp.html">Join The Class Now</a>
+      <a
+        href="https://chat.whatsapp.com/LAweQi5W6mJ38aiCGmwThG?s=cl&p=a&mlu=3"
+        target="_blank"
+      >
+        Join WhatsApp Class
+      </a>
     </div>
   </body>
 </html>
