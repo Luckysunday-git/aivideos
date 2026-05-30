@@ -76,7 +76,8 @@
         background-color: #27ae60;
         color: white;
         padding: 12px 24px;
-        font-size: 18px;
+        font-size: 26px;
+        font-weight: bold;
         border-radius: 8px;
         text-decoration: none;
       }
@@ -136,7 +137,8 @@
         background-color: #27ae60;
         color: white;
         padding: 12px 24px;
-        font-size: 18px;
+        font-size: 26px;
+        font-weight: bold;
         margin-bottom: 8px;
         border-radius: 8px;
         text-decoration: none;
@@ -165,10 +167,11 @@
         display: inline-block;
         background-color: white;
         color: #27ae60;
+        font-size: 26px;
+        font-weight: bold;
         padding: 12px 24px;
         border-radius: 8px;
         text-decoration: none;
-        font-weight: bold;
       }
 
       /* RESPONSIVE */
@@ -185,6 +188,17 @@
 
         .feature {
           width: 100%;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .cta,
+        .ready a,
+        footer a {
+          width: 80%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     </style>
