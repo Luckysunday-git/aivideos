@@ -3,78 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="img/digital hub.jpg" />
     <title>AI Video Creation Class</title>
 
-    <link rel="icon" type="image/jpg" href="img/digital hub.jpg" />
-
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
       body {
         font-family: Arial, sans-serif;
-        background: #ffffff;
-        color: #111827;
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f4ed;
+        color: #333;
       }
 
       /* NAVBAR */
-
       nav {
-        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 18px 6%;
-        background: #ffffff;
-        border-bottom: 1px solid #e5e7eb;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
+        background-color: #27ae60;
+        padding: 15px 30px;
+        color: white;
       }
 
       nav h1 {
-        font-size: 1.3rem;
-        font-weight: 800;
-        color: #111827;
+        font-size: 1.5rem;
+        margin: 0;
       }
 
       .nav-btn {
-        background: #4338ca;
-        color: white;
-        padding: 12px 18px;
-        border-radius: 12px;
-        font-size: 14px;
-        font-weight: 700;
-        transition: 0.3s ease;
+        background-color: white;
+        color: #27ae60;
+        padding: 8px 18px;
+        font-weight: bold;
+        border-radius: 6px;
+        text-decoration: none;
       }
 
       .nav-btn:hover {
-        opacity: 0.9;
+        background-color: #e8f5ec;
       }
 
       /* HERO */
-
       .hero {
-        width: 100%;
-        padding: 70px 6%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        gap: 60px;
+        justify-content: space-between;
+        padding: 60px 10%;
+        gap: 40px;
         flex-wrap: wrap;
       }
 
@@ -83,261 +58,133 @@
         min-width: 300px;
       }
 
-      .tag {
-        display: inline-block;
-        padding: 10px 18px;
-        background: #eef2ff;
-        color: #4338ca;
-        border-radius: 999px;
-        font-size: 13px;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
-
       .hero-content h2 {
-        font-size: 3.2rem;
-        line-height: 1.15;
+        font-size: 2.5rem;
         margin-bottom: 20px;
-        max-width: 650px;
-        font-weight: 800;
-        color: #111827;
-      }
-
-      .hero-content h2 span {
-        color: #4338ca;
+        color: #27ae60;
       }
 
       .hero-content p {
         font-size: 18px;
-        color: #4b5563;
-        max-width: 620px;
-        margin-bottom: 24px;
+        color: #555;
+        margin-bottom: 20px;
+        max-width: 500px;
       }
 
-      .proof {
-        margin-bottom: 28px;
-        color: #4338ca;
-        font-weight: 700;
-        font-size: 15px;
-      }
-
-      .cta-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: #4338ca;
+      .cta {
+        display: inline-block;
+        background-color: #27ae60;
         color: white;
-        padding: 18px 30px;
-        border-radius: 14px;
+        padding: 12px 24px;
         font-size: 18px;
-        font-weight: 700;
-        transition: 0.3s ease;
-        min-width: 260px;
-        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
       }
 
-      .cta-btn:hover {
-        transform: translateY(-2px);
-        background: #312e81;
-      }
-
+      /* FIXED HERO IMAGE */
       .hero-image {
         flex: 1;
         min-width: 300px;
         display: flex;
         justify-content: center;
+        align-items: center;
       }
 
       .hero-image img {
         width: 100%;
-        max-width: 520px;
-        border-radius: 24px;
+        max-width: 420px;
+        height: auto;
         object-fit: cover;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
-      /* SECTION */
-
+      /* SECTIONS */
       section {
-        padding: 70px 6%;
-      }
-
-      .section-title {
+        padding: 40px 20px;
         text-align: center;
-        font-size: 2.5rem;
-        font-weight: 800;
-        margin-bottom: 14px;
-        color: #111827;
       }
 
-      .section-text {
-        text-align: center;
-        max-width: 760px;
-        margin: auto;
-        color: #6b7280;
-        margin-bottom: 50px;
-        font-size: 17px;
+      section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
       }
-
-      /* FEATURES */
 
       .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
       }
 
-      .feature-box {
-        background: #ffffff;
-        border: 2px solid #e5e7eb;
-        border-radius: 22px;
-        padding: 30px;
-        transition: 0.3s ease;
-        height: 100%;
+      .feature {
+        background-color: white;
+        padding: 20px;
+        width: 280px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       }
 
-      .feature-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      .feature h4 {
+        color: #27ae60;
+        margin-bottom: 10px;
       }
 
-      .feature-box h3 {
-        font-size: 1.25rem;
-        margin-bottom: 14px;
-        color: #111827;
-        font-weight: 700;
+      .ready a {
+        display: inline-block;
+        background-color: #27ae60;
+        color: white;
+        padding: 12px 24px;
+        font-size: 18px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        text-decoration: none;
       }
 
-      .feature-box p {
-        color: #6b7280;
-        font-size: 16px;
+      small {
+        color: gray;
       }
 
-      /* CTA SECTION */
-
-      .cta-section {
-        text-align: center;
-        background: #f9fafb;
-        border-top: 1px solid #e5e7eb;
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      .cta-section h2 {
-        font-size: 2.6rem;
-        font-weight: 800;
-        margin-bottom: 18px;
-        color: #111827;
-      }
-
-      .cta-section p {
-        max-width: 700px;
-        margin: auto;
-        margin-bottom: 32px;
-        color: #6b7280;
-        font-size: 17px;
+      .btn-note {
+        font-size: 13px;
+        color: #9ca3af;
+        margin-top: 6px;
+        opacity: 0.7;
       }
 
       /* FOOTER */
-
       footer {
+        background-color: #27ae60;
         text-align: center;
-        padding: 50px 20px 120px;
-        background: #ffffff;
+        padding: 30px 20px;
+        color: white;
       }
 
-      footer h3 {
-        color: #111827;
-        margin-bottom: 10px;
-        font-size: 1.4rem;
-      }
-
-      footer p {
-        color: #6b7280;
-      }
-
-      /* MOBILE FIXED BUTTON */
-
-      .mobile-fixed-btn {
-        display: none;
+      footer a {
+        display: inline-block;
+        background-color: white;
+        color: #27ae60;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
       }
 
       /* RESPONSIVE */
-
-      @media (max-width: 850px) {
-        nav {
-          padding: 16px 20px;
-        }
-
-        nav h1 {
-          font-size: 1rem;
-        }
-
-        .nav-btn {
-          padding: 10px 14px;
-          font-size: 13px;
-        }
-
+      @media (max-width: 700px) {
         .hero {
           flex-direction: column;
           text-align: center;
-          padding-top: 50px;
+          padding: 40px 20px;
         }
 
         .hero-content h2 {
-          font-size: 2.3rem;
-          margin: auto;
-          margin-bottom: 20px;
-        }
-
-        .hero-content p {
-          font-size: 16px;
-          margin: auto;
-          margin-bottom: 24px;
-        }
-
-        .proof {
-          margin-bottom: 25px;
-        }
-
-        .cta-btn {
-          width: 100%;
-          min-width: 100%;
-        }
-
-        .section-title {
           font-size: 2rem;
         }
 
-        .cta-section h2 {
-          font-size: 2rem;
-        }
-
-        .mobile-fixed-btn {
-          display: block;
-          position: fixed;
-          bottom: 15px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 90%;
-          z-index: 2000;
-        }
-
-        .mobile-fixed-btn a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .feature {
           width: 100%;
-          background: #4338ca;
-          color: white;
-          padding: 16px;
-          border-radius: 14px;
-          font-size: 17px;
-          font-weight: 700;
-          box-shadow: 0 10px 30px rgba(67, 56, 202, 0.25);
-        }
-
-        footer {
-          padding-bottom: 110px;
         }
       }
     </style>
@@ -345,29 +192,17 @@
 
   <body>
     <!-- NAVBAR -->
-
     <nav>
       <h1>AI Video Creation Class</h1>
-
-      <a
-        href="https://chat.whatsapp.com/LAweQi5W6mJ38aiCGmwThG?s=cl&p=a&mlu=3"
-        target="_blank"
-        class="nav-btn"
-      >
-        Join Now
-      </a>
+      <a href="join-whatsapp.html" class="nav-btn">Join Now</a>
     </nav>
 
     <!-- HERO -->
-
     <section class="hero">
       <div class="hero-content">
-        <div class="tag">LIMITED ACCESS AI TRAINING</div>
-
         <h2>
-          Learn How To Create
-          <span>Unlimited AI Videos and Images</span>
-          Without Monthly subscriptions
+          Learn How To Create Unlimited AI Videos and Images Without Monthly
+          Subscriptions
         </h2>
 
         <p>
@@ -376,15 +211,8 @@
           and free AI tools.
         </p>
 
-        <div class="proof">Beginner Friendly • No Coding • Works On Mobile</div>
-
-        <a
-          href="https://chat.whatsapp.com/LAweQi5W6mJ38aiCGmwThG?s=cl&p=a&mlu=3"
-          target="_blank"
-          class="cta-btn"
-        >
-          Join The Waiting Group Now
-        </a>
+        <a href="join-whatsapp.html" class="cta">Join Class Now</a>
+        <p class="btn-note">Join on WhatsApp for More Information</p>
       </div>
 
       <div class="hero-image">
@@ -393,85 +221,80 @@
     </section>
 
     <!-- WHAT YOU'LL LEARN -->
-
     <section>
-      <h2 class="section-title">What You’ll Learn</h2>
+      <div class="ready">
+        <h3>Ready to Start Learning?</h3>
+        <a href="join-whatsapp.html">Join Class Now</a>
+        <p class="btn-note">Join on WhatsApp for More Information</p>
+      </div>
 
-      <p class="section-text">
-        This practical AI class is designed for beginners, creators,
-        freelancers, students, and business owners.
-      </p>
+      <h3>What You'll Learn</h3>
 
       <div class="features">
-        <div class="feature-box">
-          <h3>Start From Scratch</h3>
+        <div class="feature">
+          <h4>Start From Scratch</h4>
           <p>
             How to start AI Video Creation from scratch with zero experience.
           </p>
         </div>
 
-        <div class="feature-box">
-          <h3>Build Your Own AI App</h3>
+        <div class="feature">
+          <h4>Build Your Own AI App</h4>
           <p>
             How to build your own AI app without coding within minutes for
             unlimited video creation.
           </p>
         </div>
 
-        <div class="feature-box">
-          <h3>Free AI Tools</h3>
+        <div class="feature">
+          <h4>Free AI Tools</h4>
           <p>
-            How to use powerful AI tools for FREE without paying monthly
-            subscriptions.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <h3>Step-by-Step Video Creation</h3>
-          <p>
-            How to create eye-catching AI videos step-by-step like a
-            professional creator.
+            How to use powerful AI tools for FREE without monthly subscriptions.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CTA SECTION -->
+    <!-- COURSE FEATURES -->
+    <section>
+      <h3>Course Features</h3>
 
-    <section class="cta-section">
-      <h2>Start Creating AI Videos Today</h2>
+      <div class="features">
+        <div class="feature">
+          <h4>Step-by-Step Video Creation</h4>
+          <p>
+            How to create eye-catching AI videos step-by-step like a
+            professional creator.
+          </p>
+        </div>
 
+        <div class="feature">
+          <h4>Unlimited Video Creation</h4>
+          <p>
+            Learn systems that allow continuous AI video creation without
+            recurring costs.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h4>Community Access</h4>
+          <p>
+            Join other creators, ask questions, share ideas, and grow together.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <h3>Start Creating AI Videos Today</h3>
       <p>
         Join the WhatsApp AI class and start learning how to create professional
         AI videos.
       </p>
 
-      <a
-        href="https://chat.whatsapp.com/LAweQi5W6mJ38aiCGmwThG?s=cl&p=a&mlu=3"
-        target="_blank"
-        class="cta-btn"
-      >
-        Click To Join The Waiting Group
-      </a>
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer>
-      <h3>AI Video Creation Class</h3>
-
-      <p>Learn • Create • Grow With AI</p>
+      <a href="join-whatsapp.html">Join Class Now</a>
+      <p class="btn-note">Join on WhatsApp for More Information</p>
     </footer>
-
-    <!-- MOBILE BUTTON -->
-
-    <div class="mobile-fixed-btn">
-      <a
-        href="https://chat.whatsapp.com/LAweQi5W6mJ38aiCGmwThG?s=cl&p=a&mlu=3"
-        target="_blank"
-      >
-        Join The Waiting Group
-      </a>
-    </div>
   </body>
 </html>
